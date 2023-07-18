@@ -2,18 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "lausanne";
+  src: url("../font/*");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lausanne, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: #F6F6F6;
-  background-image: url("./assets/Background/CurveLine.svg");
-  background-repeat: no-repeat;
-  background-color: #F6F6F6;
-
-  font-synthesis: none;
+  color: #000000;
+  background-color: #000000;
+  font-synthesis: norgb(0, 0, 0);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +23,5 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-height: 100vh;
 }
