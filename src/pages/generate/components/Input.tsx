@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Input({ setLoading }) {
   const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
 
   function handleClick() {
     setLoading(true);
-    // Perform any other actions with inputValue, if needed
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/success")
+    }, 5000);
   }
 
   return (

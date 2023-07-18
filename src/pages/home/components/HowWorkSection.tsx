@@ -10,10 +10,10 @@ export default function HowWorkSection() {
         <img src={pru} className="w-[70%]" />
       </div>
       <div className="w-1/2 flex justify-center items-center">
-        <div className="flex flex-col gap-6 justify-start items-start">
-          <span className="text-gray-400">Sobre la app</span>
+        <div className="flex flex-col gap-10 justify-start items-start">
+          <span className="text-gray-300">Sobre la app</span>
           <h4 className="text-5xl text-white">¿Como funciona?</h4>
-          <p className="text-gray-400">
+          <p className="text-gray-300">
             Elevá tus proyectos web con nosotros: la herramienta perfecta para
             crear mockups profesionales en segundos. <br />
             Ofrecemos la forma más sencilla de transformar tus diseños web en
