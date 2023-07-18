@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './pages/home/Home'
+import "./App.css";
+import Generate from "./pages/generate/Generate";
+import Home from "./pages/home/Home";
+import { Routes, Route, useLocation } from "react-router-dom";
+import NotFound from "./pages/notfound/NotFound";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const location = useLocation();
   return (
     <>
-      <Home />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route index element={<Home />} />
+          <Route path={"/generate"} element={<Generate />} />
+          <Route path={"/*"} element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

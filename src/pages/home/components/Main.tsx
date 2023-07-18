@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Main() {
   return (
     <main className="w-full mt-32 py-16 flex px-6">
@@ -7,7 +9,9 @@ export default function Main() {
           en segundos
         </h1>
         <h3 className="text-white text-2xl">La manera más <span className="text-[#EF90F8]">fácil</span> para <span className="text-[#EF90F8]">presentar</span> tus <span className="text-[#EF90F8]">proyectos</span> de forma <br/> <span className="text-[#EF90F8]">profesional</span></h3>
-        <a className="text-xl bg-white text-black py-2 px-6 rounded-lg">Probar</a>
+        <Link to={"/generate"}>
+        <a className="text-xl cursor-pointer bg-white text-black py-2 px-6 rounded-lg">Probar</a>
+        </Link>
       </div>
       <div className="w-1/3 flex justify-center items-center"></div>
     </main>

@@ -1,16 +1,14 @@
 import Header from "../../components/Header";
-import HowWorkSection from "./components/HowWorkSection";
 import Main from "./components/Main";
 import transition from "../../transition"
 
-const Home =() => {
+const Generate = () => {
   return (
     <>
       <Header />
       <Main />
-      <HowWorkSection />
     </>
   );
 }
 
-export default transition(Home)
+export default transition(Generate)
