@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <main className="w-full mt-32 py-16 flex px-6">
       <div className="w-2/3 flex flex-col justify-start items-start gap-8">
-        <h1 className="text-white text-8xl">
+        <h1 className="text-white text-8xl ">
           Generá <span className="text-[#EF90F8]">mockups</span> profesionales
           en segundos
         </h1>
@@ -15,7 +15,7 @@ export default function Main() {
         </Link>
       </div>
       <div className="w-1/3 flex justify-center items-center">
-        <img src={phone} className="w-[100%]"/>
+        <img src={phone} className="w-[100%] shadow-[0px_0px_46.349998474121094px_0px_#BF67D0,0px_0px_92.69999694824219px_0px_#BF67D0,0px_0px_324.45001220703125px_0px_#BF67D0,0px_0px_648.9000244140625px_0px_#BF67D0,0px_0px_1112.4000244140625px_0px_#BF67D0,0px_0px_1946.699951171875px_0px_#BF67D0]"/>
       </div>
     </main>
   );
