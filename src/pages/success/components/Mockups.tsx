@@ -1,36 +1,70 @@
-import desktop from "../../../assets/mock/desktopMockup.png";
-import laptop from "../../../assets/mock/laptopMockup.png";
-import phone from "../../../assets/mock/phoneMockup.png";
-import tablet from "../../../assets/mock/tabletMockup.png";
+import React, { useContext, useEffect, useState } from "react";
 import Divider from "./Divider";
+import AppContext from "../../../utils/AppContext";
+import { useNavigate } from "react-router-dom";
+
+interface DeviceData {
+  device: string;
+  photos: string[];
+}
+
+interface SharedDataItem {
+  device: string;
+  photos: {
+    filename: string;
+    imageBuffer: {
+      data: number[];
+    };
+  }[];
+}
 
 export default function Mockups() {
-  const res = [
-    {
-      device: "Desktop",
-      photos: [desktop, desktop, desktop],
-    },
-    {
-      device: "Laptop",
-      photos: [laptop, laptop, laptop],
-    },
-    {
-      device: "Movil",
-      photos: [phone, phone, phone],
-    },
-    {
-      device: "Tablet",
-      photos: [tablet, tablet, tablet],
-    },
-  ];
+  const { sharedData } = useContext(AppContext);
+  const [imagesBase64, setImagesBase64] = useState<DeviceData[]>([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (sharedData === null) {
+      navigate("/not-found");
+    } else {
+      const base64Images: DeviceData[] = sharedData.map(
+        (deviceData: SharedDataItem) => ({
+          device: deviceData.device,
+          photos: deviceData.photos.map(
+            (photo) =>
+              `data:image/png;base64,${arrayBufferToBase64(
+                photo.imageBuffer.data
+              )}`
+          ),
+        })
+      );
+      setImagesBase64(base64Images);
+    }
+  }, [sharedData]);
+
+  function arrayBufferToBase64(buffer: number[]): string {
+    const bytes = new Uint8Array(buffer);
+    let binary = "";
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+  }
+
   return (
     <>
-      {res.map((mock) => (
-        <section className="flex flex-col" key={mock.device}>
-          <Divider dividerText={mock.device} />
-          <div className="grid grid-cols-3 gap-5">
-            {mock.photos.map((photo, index) => (
-              <img key={index} src={photo} alt={mock.device} className="w-80" />
+      {imagesBase64.map((deviceData) => (
+        <section className="flex flex-col" key={deviceData.device}>
+          <Divider dividerText={deviceData.device} />
+          <div className="grid grid-cols-3 gap-5 items-center">
+            {deviceData.photos.map((base64Image, index) => (
+              <img
+                key={index}
+                src={base64Image}
+                alt={`${deviceData.device} ${index + 1}`}
+                className="w-96"
+              />
             ))}
           </div>
         </section>

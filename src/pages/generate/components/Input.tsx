@@ -1,16 +1,44 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import AppContext from "../../../utils/AppContext";
 
 export default function Input({ setLoading }) {
+  const { setSharedData } = useContext(AppContext);
   const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  function isValidURL(url: string): boolean {
+    const urlPattern =
+      /^https?:\/\/(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z0-9]+(?:\/[^\s]*)?$/;
+    return urlPattern.test(url);
+  }
+
   function handleClick() {
+    setError("");
     setLoading(true);
-    setTimeout(() => {
+
+    if (!isValidURL(inputValue)) {
+      setError("Por favor, ingresá una URL válida.");
       setLoading(false);
-      navigate("/success")
-    }, 5000);
+      return;
+    }
+
+    axios
+      .get(
+        `http://localhost:3000/captures?url=${encodeURIComponent(inputValue)}`
+      )
+      .then((response) => {
+        setSharedData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+        navigate("/success");
+      });
   }
 
   return (
@@ -27,6 +55,7 @@ export default function Input({ setLoading }) {
       >
         Generar
       </button>
+      {error && <p className="text-red-500">{error}</p>}
     </>
   );
 }

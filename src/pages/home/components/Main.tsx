@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import phone from "../../../assets/3dIcons/phone3d.png"
 
 export default function Main() {
   return (
@@ -13,7 +14,9 @@ export default function Main() {
         <a className="text-xl cursor-pointer bg-white text-black py-2 px-6 rounded-lg">Probar</a>
         </Link>
       </div>
-      <div className="w-1/3 flex justify-center items-center"></div>
+      <div className="w-1/3 flex justify-center items-center">
+        <img src={phone} className="w-[100%]"/>
+      </div>
     </main>
   );
 }
