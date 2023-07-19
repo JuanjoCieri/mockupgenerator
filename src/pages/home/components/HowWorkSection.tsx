@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function HowWorkSection() {
   return (
-    <section className="w-full flex pt-16 items-center justify-center bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 rounded-xl">
-      <div className="w-1/2 flex justify-start items-end">
+    <section className="w-full flex items-center justify-center  rounded-xl">
+      <div className="w-1/2 flex justify-start items-end rounded-br-xl bg-gradient-to-b from-black to-gray-400">
         {/* <div className="w-96 h-96 bg-[#BCBEF2] rounded-xl"></div> */}
         <img src={pru} className="w-[70%]" />
       </div>
-      <div className="w-1/2 flex justify-center items-center">
+      <div className="w-1/2 flex justify-center items-center px-6">
         <div className="flex flex-col gap-10 justify-start items-start">
           <span className="text-gray-300">Sobre la app</span>
           <h4 className="text-5xl text-white">¿Como funciona?</h4>

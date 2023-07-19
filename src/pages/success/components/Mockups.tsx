@@ -57,7 +57,7 @@ export default function Mockups() {
       {imagesBase64.map((deviceData) => (
         <section className="flex flex-col" key={deviceData.device}>
           <Divider dividerText={deviceData.device} />
-          <div className="grid grid-cols-3 gap-5 items-center">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-3 gap-5 items-center">
             {deviceData.photos.map((base64Image, index) => (
               <img
                 key={index}
