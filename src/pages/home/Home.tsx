@@ -1,10 +1,13 @@
 import Header from "../../components/Header";
-import HowWorkSection from "./components/HowWorkSection";
+import HowWorkSection from "./components/About";
 import Main from "./components/Main";
-import transition from "../../transition"
+import transition from "../../transition";
 import Divisor from "./components/Divisor";
+import HowWork from "./components/HowWork";
+import Features from "./components/Features";
+import Marqueee from "./components/Marqueee";
 
-const Home =() => {
+const Home = () => {
   return (
     <>
       <Header />
@@ -12,8 +15,15 @@ const Home =() => {
       <Divisor />
       <HowWorkSection />
       <Divisor />
+      <HowWork />
+      <Divisor />
+      <Marqueee />
+      <Divisor />
+      <Features />
+      <Divisor />
+
     </>
   );
-}
+};
 
-export default transition(Home)
+export default transition(Home);
