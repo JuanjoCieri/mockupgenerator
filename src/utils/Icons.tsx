@@ -1,3 +1,79 @@
+function DesktopIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" />
+      <path d="M8 20h8" />
+    </svg>
+  );
+}
+
+function LaptopIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9H4V7z" />
+      <path d="M2 19h20" />
+    </svg>
+  );
+}
+
+function TabletIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <rect x="4" y="2" width="16" height="20" rx="2" />
+      <path d="M11 18h2" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="36"
+      height="36"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <rect x="6" y="2" width="12" height="20" rx="2" />
+      <path d="M11.95 18h.1" />
+    </svg>
+  );
+}
+
 function ThunderIcon() {
   return (
     <svg
@@ -54,4 +130,4 @@ function MoneyIcon() {
   );
 }
 
-export { ThunderIcon, StarsIcon, MoneyIcon };
+export { ThunderIcon, StarsIcon, MoneyIcon, DesktopIcon, TabletIcon, LaptopIcon, PhoneIcon };

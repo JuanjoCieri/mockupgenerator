@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../../../utils/AppContext";
 
@@ -27,7 +27,7 @@ export default function Input({ setLoading }) {
 
     axios
       .get(
-        `http://localhost:3000/captures?url=${encodeURIComponent(inputValue)}`
+        `https://mockupgenerator-back-production.up.railway.app/captures?url=${encodeURIComponent(inputValue)}`
       )
       .then((response) => {
         setSharedData(response.data);
@@ -45,7 +45,7 @@ export default function Input({ setLoading }) {
     <>
       <input
         placeholder="https://www.google.com"
-        className="w-[80%] text-white border border-gray-400 rounded-xl py-4 px-4 bg-transparent"
+        className="w-[80%] text-white border border-gray-400 rounded-xl py-4 px-4 bg-transparent shadow-[0px_0px_13.915200233459473px_0px_#974899,0px_0px_27.830400466918945px_0px_#974899,0px_0px_97.40640258789062px_0px_#974899,0px_0px_194.81280517578125px_0px_#974899,0px_0px_333.9648132324219px_0px_#974899,0px_0px_584.4384155273438px_0px_#974899]"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       ></input>

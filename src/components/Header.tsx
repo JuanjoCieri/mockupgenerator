@@ -10,7 +10,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full max-w-[1380px] h-24 flex justify-between items-center fixed top-0 px-6 backdrop-blur-lg">
+    <header className="w-full z-10 max-w-[1380px] h-24 flex justify-between items-center fixed top-0 px-6 backdrop-blur-lg">
       <div>
         <Link to={"/"}>
           <span className="text-white text-xl  tablet:text-2xl laptop:text-3xl desktop:text-3xl">

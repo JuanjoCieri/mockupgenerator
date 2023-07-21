@@ -5,7 +5,7 @@ import transition from "../../transition";
 import Divisor from "./components/Divisor";
 import HowWork from "./components/HowWork";
 import Features from "./components/Features";
-import Marqueee from "./components/Marqueee";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
@@ -17,11 +17,9 @@ const Home = () => {
       <Divisor />
       <HowWork />
       <Divisor />
-      <Marqueee />
-      <Divisor />
       <Features />
       <Divisor />
-
+      <Footer />
     </>
   );
 };

@@ -7,7 +7,7 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <main className="w-full mt-24 py-24 flex flex-col justify-center items-center gap-10">
+    <main className="w-full h-[100vh] py-24 flex flex-col justify-center items-center gap-10">
       <h4 className="text-6xl text-white text-center">Ingresá la URL de tu página web</h4>
       <Input setLoading={setLoading} />
       {loading && (
