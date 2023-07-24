@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Divider from "./Divider";
 import AppContext from "../../../utils/AppContext";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 
 interface DeviceData {
   device: string;
@@ -52,19 +53,35 @@ export default function Mockups() {
     return window.btoa(binary);
   }
 
+  const [openModal, setOpenModal] = useState(false);
+  const [image, setImage] = useState("");
+
+  function onClick(value: string) {
+    setOpenModal(true);
+    setImage(value);
+  }
+
+  function onCloseModal() {
+    setOpenModal(false);
+    setImage("");
+  }
+
   return (
     <>
+      {openModal && <Modal image={image} onClose={onCloseModal} />}
       {imagesBase64.map((deviceData) => (
         <section className="flex flex-col" key={deviceData.device}>
           <Divider dividerText={deviceData.device} />
           <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-3 gap-5 items-center">
             {deviceData.photos.map((base64Image, index) => (
-              <img
-                key={index}
-                src={base64Image}
-                alt={`${deviceData.device} ${index + 1}`}
-                className="w-96"
-              />
+              <a href="#" onClick={() => onClick(base64Image)}>
+                <img
+                  key={index}
+                  src={base64Image}
+                  alt={`${deviceData.device} ${index + 1}`}
+                  className="w-96"
+                />
+              </a>
             ))}
           </div>
         </section>

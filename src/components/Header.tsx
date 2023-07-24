@@ -19,7 +19,6 @@ export default function Header() {
         </Link>
       </div>
       <div className="hidden laptop:flex">
-        {/* Mostrar el menú completo en pantallas más grandes (tablets y laptops) */}
         <ul className="flex justify-center items-center gap-5">
           <li className="text-white text-lg">¿Como funciona?</li>
           <li className="text-white text-lg">Mockups</li>

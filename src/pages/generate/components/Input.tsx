@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import AppContext from "../../../utils/AppContext";
 
 export default function Input({ setLoading }) {
+  
   const { setSharedData } = useContext(AppContext);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
@@ -27,7 +28,7 @@ export default function Input({ setLoading }) {
 
     axios
       .get(
-        `https://mockupgenerator-back-production.up.railway.app/captures?url=${encodeURIComponent(inputValue)}`
+        `http://localhost:3000/captures?url=${encodeURIComponent(inputValue)}`
       )
       .then((response) => {
         setSharedData(response.data);

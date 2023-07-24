@@ -23,7 +23,7 @@ export default function Main() {
         </Link>
       </div>
       <div className="w-full tablet:w-1/3 laptop:w-1/3 desktop:w-1/3 flex justify-center items-center">
-        <img src={phone} className="mobile:hidden tablet:absolute laptop:absolute desktop:absolute w-[1900px]" />
+        <img src={phone} className="rounded-full tablet:absolute laptop:absolute desktop:absolute w-[1900px]" />
       </div>
     </main>
   );
