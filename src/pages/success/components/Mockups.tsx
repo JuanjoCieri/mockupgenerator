@@ -25,7 +25,7 @@ export default function Mockups() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (sharedData === null) {
+    if (sharedData === null || sharedData.length === 0) {
       navigate("/not-found");
     } else {
       const base64Images: DeviceData[] = sharedData.map(

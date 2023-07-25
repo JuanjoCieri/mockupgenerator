@@ -20,8 +20,6 @@ export default function Header() {
       </div>
       <div className="hidden laptop:flex">
         <ul className="flex justify-center items-center gap-5">
-          <li className="text-white text-lg">¿Como funciona?</li>
-          <li className="text-white text-lg">Mockups</li>
           <li>
             <Link to={"/generate"}>
               <a className="text-black text-lg py-1 px-5 cursor-pointer rounded-lg bg-white">
