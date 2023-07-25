@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -30,7 +30,6 @@ export default function Header() {
         </ul>
       </div>
       <div className="laptop:hidden">
-        {/* Mostrar el botón del menú en dispositivos móviles */}
         <button
           className="text-white text-lg p-2 rounded-lg bg-transparent outline-none"
           onClick={toggleMenu}
@@ -46,7 +45,6 @@ export default function Header() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="laptop:hidden absolute top-24 left-0 w-[100%] h-[100vh] bg-white flex items-center justify-center"
         >
-          {/* Mostrar el menú desplegable en dispositivos móviles */}
           <ul className="flex flex-col justify-center items-center gap-5">
             <li className="text-black text-lg">¿Como funciona?</li>
             <li className="text-black text-lg">Mockups</li>

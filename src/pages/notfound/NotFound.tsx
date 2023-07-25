@@ -15,4 +15,4 @@ const NotFound = () => {
   );
 }
 
-export default transition(NotFound)
+export default transition({ OgComponent: NotFound });

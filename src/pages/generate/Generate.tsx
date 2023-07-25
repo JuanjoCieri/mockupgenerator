@@ -13,4 +13,4 @@ const Generate = () => {
   );
 }
 
-export default transition(Generate)
+export default transition({ OgComponent: Generate });

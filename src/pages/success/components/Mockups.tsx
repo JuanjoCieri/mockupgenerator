@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Divider from "./Divider";
-import AppContext from "../../../utils/AppContext";
+import { useAppContext } from "../../../utils/AppContext";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 
@@ -20,7 +20,7 @@ interface SharedDataItem {
 }
 
 export default function Mockups() {
-  const { sharedData } = useContext(AppContext);
+  const { sharedData } = useAppContext();
   const [imagesBase64, setImagesBase64] = useState<DeviceData[]>([]);
   const navigate = useNavigate();
 

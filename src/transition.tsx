@@ -1,8 +1,8 @@
-// @ts-nocheck
-
 import { motion } from "framer-motion";
-
-const transition = (OgComponent) => {
+interface TransitionProps {
+  OgComponent: React.ComponentType<any>;
+}
+const transition = ({ OgComponent }: TransitionProps) => {
   return () => (
     <>
       <OgComponent />

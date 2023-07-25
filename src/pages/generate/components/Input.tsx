@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AppContext from "../../../utils/AppContext";
-
-export default function Input({ setLoading }) {
-  
-  const { setSharedData } = useContext(AppContext);
+import { useAppContext } from "../../../utils/AppContext";
+interface InputProps {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const Input: React.FC<InputProps> = ({ setLoading }) => {
+  const { setSharedData } = useAppContext();
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ export default function Input({ setLoading }) {
 
     axios
       .get(
-        `http://localhost:3000/captures?url=${encodeURIComponent(inputValue)}`
+        `https://mockupgenerator-back-production.up.railway.app/captures?url=${encodeURIComponent(inputValue)}`
       )
       .then((response) => {
         setSharedData(response.data);
@@ -59,4 +60,5 @@ export default function Input({ setLoading }) {
       {error && <p className="text-red-500">{error}</p>}
     </>
   );
-}
+};
+export default Input;

@@ -12,4 +12,4 @@ const Success = () => {
     )
 }
 
-export default transition(Success)
+export default transition({ OgComponent: Success });
