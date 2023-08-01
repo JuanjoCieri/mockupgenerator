@@ -29,7 +29,7 @@ const Input: React.FC<InputProps> = ({ setLoading }) => {
 
     axios
       .get(
-        `https://mockupgenerator-back-production.up.railway.app/captures?url=${encodeURIComponent(inputValue)}`
+        `https://mockupgenerator-back-rvwb-dev.fl0.io/captures?url=${encodeURIComponent(inputValue)}`
       )
       .then((response) => {
         setSharedData(response.data);
